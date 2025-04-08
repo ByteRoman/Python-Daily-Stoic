@@ -37,10 +37,7 @@ class DailyQuoteEmail:
     def __init__(self):
         self.quote_of_the_day = get_today_entry()
 
-        self.recipients_list = [
-            'roman.popoff@yahoo.com.au',
-            
-        ]
+        self.recipients_list = [os.environ['EMAIL']]  # send to yourself
 
         self.sender_credentials = {
             'email': os.environ['EMAIL'],
