@@ -1,3 +1,4 @@
 stoic_quotes_output.csv
 book-to-CSV.py
 strip-copyrighted-content.py
+__pycache__
