@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daily Stoic Quote</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Stoic Quote</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Daily Stoic Quote</h1>
-    <div id="quote-container">
-      <p>Loading today's wisdom...</p>
+    <div id="quote-of-the-day">
+        <h1>Daily Stoic Quote</h1>
+        <p>Loading today's wisdom...</p>
     </div>
-  </main>
 
-  <footer>
-    <small>
-      © Content from <i>"Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living"</i> by Ryan Holiday & Stephen Hanselman.<br>
-      All rights belong to the original authors and publishers. This project is for educational and non-commercial purposes only.<br><br>
-      Script and page created by <a href="https://github.com/ByteRoman" target="_blank">ByteRoman</a>.
-    </small>
-  </footer>
+    <footer>
+        <p>© Content from "Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living" by Ryan Holiday & Stephen Hanselman.</p>
+        <p>All rights belong to the original authors and publishers. This project is for educational and non-commercial purposes only.</p>
+        <p>Script and page created by ByteRoman. <a href="https://github.com/ByteRoman" target="_blank">Visit my GitHub</a></p>
+    </footer>
 
-  <script src="index.js"></script>
+    <script>
+        window.onload = function() {
+            fetch('stoic_quotes_output.csv')
+                .then(response => response.text())
+                .then(data => {
+                    const quotes = parseCSV(data);
+                    const today = getTodayDate();
+                    const quoteOfTheDay = getQuoteForToday(quotes, today);
+                    displayQuote(quoteOfTheDay);
+                })
+                .catch(error => console.error('Error fetching the CSV:', error));
+        };
+
+        function parseCSV(data) {
+            const rows = data.split('\n');
+            const quotes = rows.map(row => row.split('|'));
+            return quotes;
+        }
+
+        function getTodayDate() {
+            const today = new Date();
+            const day = today.getDate();
+            const suffix = ['st', 'nd', 'rd'][((day % 10) - 1) % 10] || 'th';
+            return `${today.toLocaleString('default', { month: 'long' })} ${day}${suffix}`;
+        }
+
+        function getQuoteForToday(quotes, today) {
+            return quotes.find(quote => quote[0] === today) || ["", "No Stoic entry found for today.", ""];
+        }
+
+        function displayQuote(quoteOfTheDay) {
+            const quoteDiv = document.getElementById('quote-of-the-day');
+            if (quoteDiv) {
+                quoteDiv.innerHTML = `<h2>Today's Stoic Wisdom</h2>
+                                     <p>${quoteOfTheDay[1]}</p>
+                                     <blockquote>${quoteOfTheDay[2]}</blockquote>
+                                     <footer>${quoteOfTheDay[3]}</footer>`;
+            } else {
+                console.error('quote-of-the-day element not found.');
+            }
+        }
+    </script>
 </body>
 </html>
