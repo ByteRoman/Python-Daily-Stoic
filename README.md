@@ -17,6 +17,7 @@ All content is sent directly from a pre-formatted `.csv` file (`stoic_quotes_out
 - Automatically runs **daily at 7:00 AM ACST** (configured via GitHub Actions cron)
 - Sends email using your GMX account credentials (any email service of your choice can be used)
 - Designed to be fully automated – no manual work once set up
+- New! 📖 **Web version available to view today's Stoic quote online** (see below)
 
 ---
 
@@ -39,6 +40,15 @@ The core script `dd_email.py` does the following:
 2. Looks up the corresponding entry from `stoic_quotes_output.csv`
 3. Builds and sends an email using GMX SMTP
 4. Includes only one recipient (yourself), configured via environment variables
+
+---
+
+### GitHub Pages
+You can now also read the daily Stoic entry online:
+
+➡️ **[View today's quote here](https://byteroman.github.io/Python-Daily-Stoic/)**
+
+The webpage loads the correct quote based on today's date, pulling directly from `stoic_quotes_output.csv`.
 
 ---
 
