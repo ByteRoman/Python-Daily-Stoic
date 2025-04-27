@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f1ea;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Quote Section */
+#quote-of-the-day {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+#quote-of-the-day h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#quote-of-the-day p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#quote-of-the-day blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+#quote-of-the-day footer {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Footer Styling */
+footer {
+    max-width: 800px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #quote-of-the-day {
+        padding: 20px;
+    }
+
+    #quote-of-the-day h2 {
+        font-size: 1.5rem;
+    }
+
+    #quote-of-the-day p {
+        font-size: 1rem;
+    }
+
+    #quote-of-the-day blockquote {
+        font-size: 0.95rem;
+    }
+}
