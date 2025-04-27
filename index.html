@@ -1,52 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Stoic Quote</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .quote-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            max-width: 700px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-            font-size: 28px;
-            color: #333;
-        }
-        blockquote {
-            font-style: italic;
-            color: #555;
-            margin: 20px 0;
-        }
-        p {
-            margin-top: 10px;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Stoic Quote</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quote-container">
-        <h1 id="title">Loading...</h1>
-        <blockquote id="quote"></blockquote>
-        <p id="comment"></p>
+  <main>
+    <h1>Daily Stoic Quote</h1>
+    <div id="quote-container">
+      <p>Loading today's wisdom...</p>
     </div>
+  </main>
 
-    <script src="index.js"></script>
+  <footer>
+    <small>
+      © Content from <i>"Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living"</i> by Ryan Holiday & Stephen Hanselman.<br>
+      All rights belong to the original authors and publishers. This project is for educational and non-commercial purposes only.<br><br>
+      Script and page created by <a href="https://github.com/ByteRoman" target="_blank">ByteRoman</a>.
+    </small>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
